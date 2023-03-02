@@ -1,0 +1,27 @@
+<style>
+	.container {
+		max-width: 70%;
+		margin: 0 auto;
+	}
+</style>
+<div class="container">
+	<div class="nav">
+		<ul style="list-style-type: none; display: flex; gap: 30px; justify-content: center">
+			<li>
+				<a href="/">
+					<h3>Главная страница</h3>
+				</a>
+			</li>
+         <li>
+				<a href="{{ path('app_course_list') }}">
+					<h3>Список курсов</h3>
+				</a>
+			</li>
+			<li>
+				<a href="{{ path('app_course_create') }}">
+					<h3>Создание курса</h3>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>

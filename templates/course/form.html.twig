@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Course Manager
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>Course Manager</h1>
+		<h3>
+			{% if course.title %}
+				{{ course.title }}
+			{% endif %}
+		</h3>
+
+		{{ form_start(form) }}
+		<div style="display: flex; flex-direction: column; gap: 20px">
+			<div style="display: flex; flex-direction: column;">
+				<div class="label">{{ form_label(form.title) }}</div>
+				<div class="widget">{{ form_widget(form.title) }}</div>
+			</div>
+			<div style="display: flex; flex-direction: column">
+				<div class="label">{{ form_label(form.description) }}</div>
+				<div class="widget">{{ form_widget(form.description) }}</div>
+			</div>
+			<div style="display: flex; flex-direction: column">
+				<div class="label">{{ form_label(form.credits) }}</div>
+				<div class="widget">{{ form_widget(form.credits) }}</div>
+			</div>
+			<div style="display: flex; flex-direction: column">
+				<div class="label">{{ form_label(form.category) }}</div>
+				<div class="widget">{{ form_widget(form.category) }}</div>
+			</div>
+			<div style="display: flex; flex-direction: column">
+				{{ form_row(form.save) }}
+			</div>
+		</div>
+		{{ form_end(form) }}
+	</div>
+{% endblock %}

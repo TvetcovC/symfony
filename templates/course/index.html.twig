@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ course.title }}
+{% endblock %}
+
+{% block body %}
+	<style>
+		.example-wrapper {
+			margin: 1em auto;
+			max-width: 800px;
+			width: 95%;
+			font: 18px / 1.5 sans-serif;
+		}
+		.example-wrapper code {
+			background: #F5F5F5;
+			padding: 2px 6px;
+		}
+	</style>
+
+	<div class="example-wrapper">
+		<h1>{{ course.title }}</h1>
+		<p>{{ course.description }}</p>
+		<div>
+			<p>
+				<b>Кредиты</b>:
+				<span>{{ course.credits }}</span>
+			</p>
+			<p>
+				<b>Категория</b>:
+				<span>{{ course.category.name }}</span>
+			</p>
+		</div>
+		<a href="{{ path('app_course_list') }}">To list</a>
+	</div>
+{% endblock %}
